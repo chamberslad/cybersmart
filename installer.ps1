@@ -49,7 +49,7 @@ function Download-And-Install {
       Invoke-WebRequest -Uri $url -OutFile $tempFile
       Write-Host "File downloaded successfully"
       Write-Host "Installing CyberSmart Active Protect"
-      Start-Process -FilePath $tempFile -ArgumentList "--NoUI --NoConsole" -Wait
+      Start-Process -FilePath $tempFile -ArgumentList "--NoUI" -Wait
       Read-Installer-Logs
       write-host "Removing $tempFile"
       Remove-Item -Path $tempFile
